@@ -1,0 +1,16 @@
+{
+  "name": "workflow-rest-data-sources-reload",
+  "displayName": "Workflow: Reload REST Data sources node",
+  "description": "Reloads all enabled REST data sources. No configuration required.",
+  "version": "0.2.3",
+  "main": "./dist/server/index.js",
+  "peerDependencies": {
+    "@nocobase/client": "2.x",
+    "@nocobase/database": "2.x",
+    "@nocobase/plugin-workflow": ">=0.17.0-alpha.3",
+    "@nocobase/server": "2.x"
+  },
+  "keywords": [
+    "Workflow"
+  ]
+}
