@@ -1,18 +1,15 @@
 # NocoBase workflow plugin: reload data sources
 
-## Instructions (on Windows)
+1. Download the tgz file from the repo.
 
-1. See [Your first plugin](https://docs.nocobase.com/development/your-fisrt-plugin) to get the NocoBase environment set up.
+2. Click on the "Add & Update" button in the Plugin Manager and select the "Upload plugin" tab and upload the tgz file.
 
-2. Drop in the plugin code into your project: e.g. `/packages/plugins/@my-project/plugin-workflow-reload-data-sources`.
+3. Enable the plugin.
 
-3. Build using yarn:
+## APP_CLIENT_ENTRY_MODE issue
 
-    ```shell
-    cd my-nocobase-app
-    yarn build @my-project/plugin-workflow-reload-data-sources --tar
-    ```
+At this time, if the [APP_CLIENT_ENTRY_MODE](https://www.nocobase.com/en/blog/2.2.0) environment variable is set, then the option to upload the plugin may or may not be available in the Plugin Manager. Here are the workarounds depending on the value of the parameter setting:
 
-   The tar file will be in `C:\Git\nocobase\my-nocobase-app\packages\plugins\@my-project`
-
-4. Upload the file via the Plugin manager and restart the container.
+* `legacy-default`: No workaround needed.
+* `modern-default`: Change the Plugin Manager URL path from the modern `https://<domainname>/v/admin/settings/plugin-manager` to legacy `https://<domainname>/admin/settings/plugin-manager` (i.e. remove `\v` from the path).
+* `modern-only`: Change to `modern-default` and use that workaround.

@@ -1,16 +1,9 @@
 import { Processor, Instruction, JOB_STATUS, FlowNodeModel } from '@nocobase/plugin-workflow';
 
 export default class extends Instruction {
-  app: any;
-
-  constructor(app: any) {
-    super(app);
-    this.app = app;
-  }
-
-  async run(node: FlowNodeModel, prevJob, processor: Processor) {
+  async run(node: FlowNodeModel, prevJob: unknown, processor: Processor) {
     try {
-      const app = this.app;
+      const app = this.workflow.app;
 
       const dataSourcesRecords = await app.db.getRepository('dataSources').find({
         filter: {
