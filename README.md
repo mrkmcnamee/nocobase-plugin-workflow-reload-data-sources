@@ -43,7 +43,7 @@ Here is a example of how the refresh workflow can look. It has a `Schedule event
 
 ## Custom requests use case
 
-The plugin can also be used when creating NocoBase [Custom requests](https://docs.nocobase.com/interface-builder/actions/types/custom-request) to external APIs or third-party services that require OAuth2 authentication. A regular [JS Action](https://docs.nocobase.com/interface-builder/actions/types/js-action) cannot be used since it exposes the tokens to the client, whereas Custom requests run server-side.
+The plugin is not required for this use case, but creating NocoBase [Custom requests](https://docs.nocobase.com/interface-builder/actions/types/custom-request) to external APIs or third-party services that require OAuth2 authentication requires much the same approach as above. Indeed, endpoints from the same REST API data source can appear in Custom requests. A regular [JS Action](https://docs.nocobase.com/interface-builder/actions/types/js-action) cannot be used since it exposes the tokens to the client, whereas Custom requests run server-side.
 
 Let's assume the custom request is to the same service as the one above. Add a second SQL action to the workflow to update the custom request authorization header directly in the Main database using this query:
 
